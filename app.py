@@ -477,14 +477,14 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ================== API CONFIGURATION ==================
-GEMINI_API_KEY = "AIzaSyCJU2Tb-jDwQQPhgSIBYqntOh4En0EGf0U"
-YOUTUBE_API_KEY = "AIzaSyDtn_KClWO6QZQp4loBvzJ6VbnGyxO63IM"
+GEMINI_API_KEY = "AIzaSyCJU2Tb-jDwQQPhgSIBYqntOh4En0EGf"
+YOUTUBE_API_KEY = "AIzaSyDtn_KClWO6QZQp4loBvzJ6VbnGyxO63"
 
 # ================== LOAD MODELS ==================
 @st.cache_resource
 def load_models():
     genai.configure(api_key=GEMINI_API_KEY)
-    gemini_model = genai.GenerativeModel("gemini-2.5-flash")
+    gemini_model = genai.GenerativeModel("gemini-2.5flash")
     youtube = build("youtube", "v3", developerKey=YOUTUBE_API_KEY)
     sentiment_pipeline = pipeline(
         "sentiment-analysis",
